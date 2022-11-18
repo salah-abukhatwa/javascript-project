@@ -6,6 +6,55 @@ body {
     font-family: 'Open Sans', sans-serif;
 }
 
+/* start setting box */
+.setting-box { position: fixed; left: -195px; top: 0; width: 200px; background-color:#fff; min-height: 100vh; z-index: 1000; transition: 0.3s ; -webkit-transition: 0.3s ; -moz-transition: 0.3s ; -ms-transition: 0.3s ; -o-transition: 0.3s ;
+}
+
+.seting-box .toggle-setting { position: absolute; right: -36px; top: 100px; background-color:#fff; width: 36px; text-align: center; cursor: pointer; border-radius: 0px 15px 15px 0; -webkit-border-radius: 0px 15px 15px 0; -moz-border-radius: 0px 15px 15px 0; -ms-border-radius: 0px 15px 15px 0; -o-border-radius: 0px 15px 15px 0;
+}
+.toggle-setting .fa-gear{
+    padding: 10px 0;
+        width: 36px;
+        cursor: pointer;
+}
+.setting-box.opean {
+    left: 0;
+   
+}
+.setting-box .setting-container .option-box{
+ padding: 20px;
+}
+.setting-box .option-box h4{
+margin: 0;
+color: #666;
+}
+.setting-box .option-box .colors-list{
+ list-style: none;
+ text-align: center;
+ padding: 0;
+}
+.setting-box .option-box .colors-list li{ width: 20px; height: 20px; background-color: black; border-radius: 50%; cursor: pointer; -webkit-border-radius: 50%; -moz-border-radius: 50%; -ms-border-radius: 50%; -o-border-radius: 50%;
+    opacity: 0.5;
+    display: inline-block;
+}
+.setting-box .option-box .colors-list li.active{opacity: 1;}
+.setting-box .colors-list li:first-child{
+    background-color: #ffc107;
+}
+.setting-box .colors-list li:nth-child(2){
+    background-color: #355;
+}
+.setting-box .colors-list li:nth-child(3){
+    background-color: #0734ff;
+}
+.setting-box .colors-list li:nth-child(4){
+    background-color: #9e2727;
+}
+.setting-box .colors-list li:nth-child(5){
+    background-color: #22ed76;
+}
+/* End setting box */
+
 /* start landing Page */
 .landing-page{
     min-height: 100vh;
@@ -80,6 +129,9 @@ padding: 10px;
 .introduction-text h1{
     font-size: 37px;
     margin: 0 0 12px;
+}
+.introduction-text h1 span{
+    color: var(--main-color);
 }
 .introduction-text p{
     line-height: 1.6;
