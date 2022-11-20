@@ -39,6 +39,29 @@ colorsli.forEach(li => {
         e.target.classList.add("active")
     });
 });
+// Switch random-backgrounds
+const randomBackeL = document.querySelectorAll(".random-backgrounds span");
+randomBackeL.forEach( span => {
+    span.addEventListener("click", (e) => {
+       
+        // Remove active class from all span
+        e.target.parentElement.querySelectorAll(".active").forEach(element => {
+            element.classList.remove("active")
+        });
+        // Add Active Class on
+        e.target.classList.add("active")
+        if (e.target.dataset.background === 'yes') {
+            backgroundOption = true;
+            randomizeImgs();
+            localStorage.setItem("background-option" , true)
+        } else {
+            backgroundOption = false
+            clearInterval(backgroundInterval);
+            localStorage.setItem("background-option" , false)
+
+        }
+    });
+});
 // select landing page
 let landingPage = document.querySelector(".landing-page");
 
@@ -46,10 +69,46 @@ let landingPage = document.querySelector(".landing-page");
 
 let imgsArray = ["01.jpeg", "02.jpg", "03.webp", "04.jpg", "05.webp"];
  
+// Random Background Option 
+let backgroundOption = true;
 
-setInterval(() => {
+// Vairable To control the Interval
+let backgroundInterval;
+
+// Check If there's local Storage Random Background item
+let backgroundLocalItem = localStorage.getItem("background-option");
+// check if random background local storge is not empty
+if (backgroundLocalItem !== null) {
+    
+    if (backgroundLocalItem === "true") {
+        backgroundOption = true;
+    } else {
+        backgroundOption = false;
+    }
+// Remove active class from all spans
+       document.querySelectorAll(".random-backgrounds span").forEach(element => {
+            element.classList.remove("active")
+        });
+        // Add Active Class on span
+        if (backgroundLocalItem === "true") {
+            document.querySelector(".random-backgrounds .yes").classList.add("active")
+        } else {
+            document.querySelector(".random-backgrounds .no").classList.add("active")
+
+        }
+    
+}
+
+
+// Function To Randomize Imgs
+ function randomizeImgs() {
+    if (backgroundOption === true) {
+ backgroundInterval =   setInterval(() => {
     let randomNumber = Math.floor(Math.random() * imgsArray.length);
 
 landingPage.style.backgroundImage = 'url("imge/'+ imgsArray[randomNumber] +'")';
 
-}, 4000);
+}, 1000);
+    }
+}
+randomizeImgs();
