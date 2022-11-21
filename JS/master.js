@@ -112,3 +112,35 @@ landingPage.style.backgroundImage = 'url("imge/'+ imgsArray[randomNumber] +'")';
     }
 }
 randomizeImgs();
+
+// Select Skilles Selector
+let ourSkilss = document.querySelector(".skills");
+window.onscroll = function () {
+    // Skills offsit top 
+    let skillsOffset = ourSkilss.offsetTop;
+   
+    // Skills Outer Height
+    let skillsOuterHeight = ourSkilss.offsetHeight;
+
+    // Window Height
+    let windowHeight = this.innerHeight;
+    
+    // Window scrollTop
+    let windowScrollTop = this.pageYOffset;
+this.console.log(windowScrollTop); 
+
+    if (windowScrollTop + 0.3 > (skillsOffset + skillsOuterHeight - windowHeight)) {
+        let allSkills = document.querySelectorAll(".skill-box .skill-progress span");
+        allSkills.forEach(skill => {
+            skill.style.width = skill.dataset.progress;
+        });
+         // that is from me SALAH
+    } else {
+         let allSkills = document.querySelectorAll(".skill-box .skill-progress span");
+        allSkills.forEach(skill => {
+            skill.style.width = 0;  
+           
+        });
+    }
+
+}
