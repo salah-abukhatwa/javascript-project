@@ -10,6 +10,7 @@ body {
     font-family: 'Open Sans', sans-serif;
 }
 
+
 .container{
     width: 1170px;
     padding-left: 15px;
@@ -30,6 +31,7 @@ body {
     -moz-transition: 0.3s;
     -ms-transition: 0.3s;
     -o-transition: 0.3s;
+    border: 1px solid rgb(235, 232, 232);
 }
 
 .setting-box .toggle-setting {
@@ -40,6 +42,7 @@ body {
     width: 36px;
     text-align: center;
     cursor: pointer;
+    border: 1px 1px 1px 0 solid rgb(235, 232, 232);
     border-radius: 0px 15px 15px 0;
     -webkit-border-radius: 0px 15px 15px 0;
     -moz-border-radius: 0px 15px 15px 0;
