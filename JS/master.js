@@ -205,3 +205,17 @@ document.addEventListener("click", (e) => {
 
     }
 });
+
+
+
+
+//Selecy All Bullets
+const allBullets = document.querySelectorAll(".nav-bullets .bullet");
+
+allBullets.forEach(bullet => {
+    bullet.addEventListener("click", (e) => {
+        document.querySelector(e.target.dataset.section).scrollIntoView({
+           behavior :"smooth"
+        });
+    });
+});

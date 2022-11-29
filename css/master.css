@@ -143,6 +143,51 @@ body {
 
 /* End setting box */
 
+/* Start Nav B ullets */
+.nav-bullets{ position: fixed; right: 0; top: 50%; transform:translateY(-50%); -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); -ms-transform:translateY(-50%); -o-transform:translateY(-50%);
+    width: 50px;
+    z-index: 1;
+} 
+.nav-bullets .bullet{ width: 20px; height: 20px; border: 3px solid var(--main-color); margin: 10px auto; border: radius 50%; ; -webkit-border-radius:50% ; -moz-border-radius:50% ; -ms-border-radius:50% ; -o-border-radius:50% ; position: relative;
+    cursor: pointer;
+}
+.nav-bullets .bullet:hover .tooltip{
+    display: block;
+}
+.nav-bullets .bullet .tooltip{
+    background-color: var(--main-color);
+    width: 150px;
+    color: #fff;
+    padding: 2px 10px;
+    position: absolute;
+    right: 30px;
+    top: -5px;
+    text-align: center;
+   pointer-events: none;
+    display: none;
+}
+.nav-bullets .bullet .tooltip::before{
+            content: "";
+            border: 10px solid;
+            border-color: transparent transparent transparent var(--main-color);
+            height: 0;
+            width: 0;
+            position: absolute;
+            top: 50%;
+            right: -22px;
+            transform:translateY(-50%) ;
+            -webkit-transform:translateY(-50%) ;
+            -moz-transform:translateY(-50%) ;
+            -ms-transform:translateY(-50%) ;
+            -o-transform:translateY(-50%) ;
+}
+.nav-bullets .bullet:hover{
+    background-color: var(--main-color);
+    border-color: #fff;
+
+}
+/* End Nav B ullets */
+
 /* start landing Page */
 .landing-page {
     min-height: 100vh;
