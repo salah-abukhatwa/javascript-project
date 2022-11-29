@@ -211,11 +211,21 @@ document.addEventListener("click", (e) => {
 
 //Selecy All Bullets
 const allBullets = document.querySelectorAll(".nav-bullets .bullet");
+const allLinks = document.querySelectorAll(".links a");
 
-allBullets.forEach(bullet => {
-    bullet.addEventListener("click", (e) => {
-        document.querySelector(e.target.dataset.section).scrollIntoView({
-           behavior :"smooth"
+function scrollToSection(elements) {
+    elements.forEach(ele => {
+        ele.addEventListener("click", (e) => {
+            e.preventDefault();
+            
+           
+            document.querySelector(e.target.dataset.section).scrollIntoView({
+                behavior: "smooth"
+            });
+            
         });
     });
-});
+    
+}
+scrollToSection(allBullets)
+scrollToSection(allLinks)
