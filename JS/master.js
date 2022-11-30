@@ -31,12 +31,7 @@ colorsli.forEach(li => {
         // Set color on root
         document.documentElement.style.setProperty("--main-color", e.target.dataset.color);
         localStorage.setItem("color_option", e.target.dataset.color);
-        // Remove active class from all items
-        e.target.parentElement.querySelectorAll(".active").forEach(element => {
-            element.classList.remove("active")
-        });
-        // Add Active Class on
-        e.target.classList.add("active")
+        handleActive(e);
     });
 });
 // Switch random-backgrounds
@@ -44,12 +39,8 @@ const randomBackeL = document.querySelectorAll(".random-backgrounds span");
 randomBackeL.forEach( span => {
     span.addEventListener("click", (e) => {
        
-        // Remove active class from all span
-        e.target.parentElement.querySelectorAll(".active").forEach(element => {
-            element.classList.remove("active")
-        });
-        // Add Active Class on
-        e.target.classList.add("active")
+        handleActive(e);
+
         if (e.target.dataset.background === 'yes') {
             backgroundOption = true;
             randomizeImgs();
@@ -218,14 +209,68 @@ function scrollToSection(elements) {
         ele.addEventListener("click", (e) => {
             e.preventDefault();
             
-           
             document.querySelector(e.target.dataset.section).scrollIntoView({
                 behavior: "smooth"
             });
-            
+        
         });
     });
     
 }
-scrollToSection(allBullets)
-scrollToSection(allLinks)
+scrollToSection(allBullets);
+scrollToSection(allLinks);
+
+//Handle Active State
+function handleActive(ev) {
+    //remove Active Class From All Chilldren
+     ev.target.parentElement.querySelectorAll(".active").forEach(element => {
+            element.classList.remove("active")
+        });
+        // Add Active Class on
+        ev.target.classList.add("active")
+    
+}
+
+
+
+
+let bulletsSpan = document.querySelectorAll(".bullets-option span");
+let bulletsContainer = document.querySelector(".nav-bullets");
+let bulletlocalItem = localStorage.getItem("bullets_option");
+
+if (bulletlocalItem !== null) {
+
+    bulletsSpan.forEach(span => {
+       span.classList.remove("active")
+    });
+    
+    if (bulletlocalItem === "block") {
+        bulletsContainer.style.display = "block";
+        document.querySelector(".bullets-option .yes").classList.add("active");
+    } else {
+        bulletsContainer.style.display = "none";  
+        document.querySelector(".bullets-option .no").classList.add("active");
+    }
+}
+
+bulletsSpan.forEach(span => {
+    span.addEventListener("click", (e) => {
+        if (span.dataset.display === "show") {
+            bulletsContainer.style.display = "block";
+            localStorage.setItem("bullets_option" , "block")
+        } else {
+            bulletsContainer.style.display = "none";
+            localStorage.setItem("bullets_option" , "none")
+        }
+        handleActive(e)
+    });
+
+});
+
+//Reset Burron
+document.querySelector(".reset-options").onclick = function () {
+    localStorage.removeItem("color_option");
+    localStorage.removeItem("background-option");
+    localStorage.removeItem("bullets_option");
+   location.reload();
+}
