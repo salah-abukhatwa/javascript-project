@@ -80,14 +80,21 @@
         <div class="container">
         <div class="header-area">
             <div class="logo">JS Project</div>
-            <ul class="links">
-                <li><a href="#" data-section = ".about-us">About</a></li>
-                <li><a href="#" data-section = ".skills">Skills</a></li>
-                <li><a href="#" data-section = ".gallery">Gallery</a></li>
-                <li><a href="#" data-section = ".timeline">Timeline</a></li>
-                <li><a href="#" data-section = ".features">Features</a></li>
-                <li><a href="#" data-section = ".testimonials">Testimonials</a></li>
-            </ul>
+            <div class="links-container">
+                <ul class="links">
+                    <li><a href="#" data-section=".about-us">About</a></li>
+                    <li><a href="#" data-section=".skills">Skills</a></li>
+                    <li><a href="#" data-section=".gallery">Gallery</a></li>
+                    <li><a href="#" data-section=".timeline">Timeline</a></li>
+                    <li><a href="#" data-section=".features">Features</a></li>
+                    <li><a href="#" data-section=".testimonials">Testimonials</a></li>
+                </ul>
+                <button class="toggle-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
         </div>
         </div>
         <div class="introduction-text">
@@ -210,7 +217,7 @@
                 </div>
                 <div class="clearFix"></div>
                 <div class="year">2020</div>
-                 <div class="left ">
+                <div class="left ">
                     <div class="content">
                         <h3>Testing Heading</h3>
                         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloremque, ipsam. Quis nostrum impedit dicta, molestiae fugiat aut doloremque numquam recusandae laboriosam sit tempore nihil quisquam quibusdam, blanditiis possimus reprehenderit. Reiciendis.</p>
@@ -287,10 +294,10 @@
         blanditiis</p>
     <div class="person-info">
         <img src="https://placehold.jp/a7aad2/ffffff/80x80.png" id="" alt="">
-       <div class="info">
+        <div class="info">
         <h4>MOHAMED SALAH</h4>
         <p>CEO At Company</p>
-       </div>
+        </div>
     </div>
 </div>
 <div class="ts-box">
@@ -298,10 +305,10 @@
         blanditiis</p>
     <div class="person-info">
         <img src="https://placehold.jp/575b8e/ffffff/80x80.png" id="" alt="">
-       <div class="info">
+        <div class="info">
         <h4>NOR ALI</h4>
         <p>CEO At Company</p>
-       </div>
+        </div>
     </div>
 </div>
     </div>
@@ -309,6 +316,26 @@
         </div>
     </div>
     <!-- End Testimonials -->
+    <!-- Start Contact Us -->
+    <div class="contact">
+        <div class="overlay"></div>
+        <div class="container">
+            <h2>Contact Us</h2>
+            <form action="">
+                <div class="left">
+                    <input type="text" placeholder="Your Name" name="username">
+                    <input type="text" placeholder="Your Phone" name="phone">
+                    <input type="email" placeholder="Your Email" name="email">
+                    <input type="text" placeholder="Subject" name="subject">
+                </div>
+                <div class="right">
+                    <textarea  name="massage" placeholder="Your message"></textarea>
+                    <input type="submit" value="send">
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- End Contact Us -->
 
     <script src="js/master.js"></script>
 </body>
