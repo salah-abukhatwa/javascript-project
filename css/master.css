@@ -226,6 +226,10 @@ body {
     z-index: 1;
 }
 
+.landing-page .container{
+position: relative;
+z-index: 1000;
+}
 .header-area {
     position: relative;
     z-index: 2;
@@ -311,13 +315,19 @@ body {
     color: #fff;
     z-index: 2;
     text-align: center;
-    width: 100%;
+    width: 95%;
 }
+
 
 .introduction-text h1 {
     font-size: 37px;
     margin: 0 0 12px;
+}
 
+@media (max-width: 575px) {
+    .introduction-text h1 {
+        font-size: 26px;
+    }
 }
 
 .introduction-text h1 span {
@@ -371,9 +381,22 @@ padding-top: 50px;
 padding-bottom: 50px;
 display: flex;
 }
+
+@media (max-width: 767px) {
+    .about-us{
+        display: block;
+        text-align: center;
+    }
+}
 .about-us .info-box{
     flex: 1;
     padding: 30px;
+}
+@media (max-width: 767px) {
+
+    .about-us .info-box {
+        padding: 0;
+    }
 }
 .about-us .info-box h2{
 font-weight: bold;
@@ -422,11 +445,25 @@ flex: 1;
     padding: 15px;
     margin-bottom: 15px;
 }
+
+@media (max-width: 767px) {
+ 
+    .skills .skill-box{
+        display: block;
+    }
+}
 .skills .skill-box .skill-name{
 width: 140px;
 font-weight: bold;
 text-align: center;
 line-height: 30px;
+}
+@media (max-width: 767px) {
+
+    .skills .skill-box .skill-name {
+        width: 100%;
+        margin-bottom: 15px;
+    }
 }
 .skills .skill-box .skill-progress{ height: 30px; background-color: #f6f6f6; width: 100%; border-radius: 6px; -webkit-border-radius: 6px; -moz-border-radius: 6px; -ms-border-radius: 6px; -o-border-radius: 6px;
     position: relative;
@@ -449,6 +486,7 @@ line-height: 30px;
 .gallery{
     padding-top: 50px;
     padding-bottom: 50px;
+   
 }
 .gallery h2{
     font-weight: bold;
@@ -583,6 +621,22 @@ margin-left: -1px;
     margin-bottom: 40px;
     position: relative;
 }
+
+@media (max-width: 767px) {
+    .timeline .timeline-content .left,
+    .timeline .timeline-content .right{
+        width: 100%;
+        margin-bottom:20px ;
+    }
+        .timeline .timeline-content .left::before,
+        .timeline .timeline-content .right::before {
+            display: none;
+        }
+                .timeline .timeline-content .left .content::before,
+                .timeline .timeline-content .right .content::before{
+                    display: none;
+                }
+}
 .timeline .timeline-content .left{
    float:left ;
 }
@@ -679,8 +733,9 @@ margin-left: -1px;
     align-items: center;
     text-align: center;
     margin-bottom: 40px;
-
 }
+
+
 .features .feat-box h4{
 font-size: 22px;
 margin: 15px 0 20px;
@@ -691,11 +746,25 @@ position: relative;
 }
 .features .feat-box p{
 
+
 }
 
 .feat-box img{
     width: 96px;
     height:96px;
+}
+
+@media (max-width: 991px) {
+    .features .feat-box {
+        flex-basis: 50%;
+    }
+
+}
+@media (max-width: 767px) {
+    .features .feat-box {
+        flex-basis: 100%;
+    }
+
 }
 /* END features */
 /* Start Testimonials */
@@ -745,6 +814,9 @@ justify-content: space-between;
         flex-basis: 33%;
         padding: 20px;
 }
+
+
+
 .testimonials .ts-box > p{
 margin: 0 0 20px;
 line-height: 1.5;
@@ -757,6 +829,7 @@ font-style: italic;
    display: flex;
   justify-content: space-around;
 }
+
 
 .person-info .info{
     display: flex;
@@ -771,6 +844,8 @@ font-style: italic;
     -o-border-radius:50%;
     width: 40%;
 }
+
+
 .testimonials .ts-box .person-info .info {
     
 }
@@ -780,6 +855,30 @@ margin: 35px 0 10px;
 .testimonials .ts-box .info p {
     color: #707070;
     margin: 0;
+}
+
+@media (max-width: 991px) {
+    .testimonials h2{
+        text-align: center;
+    }
+    .testimonials .box {
+        flex-direction: column;
+        width: 70%;
+        margin: 0 auto ;
+    }
+        .testimonials .ts-box {
+          
+          margin-bottom: 10px;
+      
+        }
+    .testimonials .ts-box .person-info {
+        flex-direction: column;
+        align-items: center;
+        }
+        .person-info .info {
+            align-items: center;
+        }
+        
 }
 /* End Testimonials */
 
@@ -827,12 +926,22 @@ margin: 35px 0 10px;
 .contact form .right{
     flex-basis: 40%;
 }
+
 .contact form input:not([type="submit"]) {
     margin: 0 0 10px ;
     width: 95%;
     background-color: rgb(218, 218, 0218 , 0.19);
     border: 1px solid #ccc;
     height: 40px;
+}
+@media (max-width: 767px) {
+    .contact form {
+        flex-direction: column;
+    }
+
+    .contact form input:not([type="submit"]) {
+        width: 100%;
+    }
 }
 .contact form textarea{
 background-color: rgb(218, 218, 0218, 0.19);
